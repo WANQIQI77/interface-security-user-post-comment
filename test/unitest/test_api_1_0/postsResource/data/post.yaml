@@ -1,0 +1,24 @@
+- name: posts添加接口
+  request:
+    method: post
+    url: /api_1_0/posts
+    headers:
+      token: token
+    data:
+      autoID: 
+      post_id: 
+      title: 
+      content: 
+      publish_date: 
+      user_id: 
+      isDelete: 
+      add_time: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+    - eq:
+        - code
+        - "2000"
+    

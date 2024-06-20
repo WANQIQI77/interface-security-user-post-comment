@@ -1,0 +1,19 @@
+-
+  module_name: commentsService
+  class_name: commentsService
+  function_name: xxx
+  params:
+      autoID: 
+      content_id: 
+      content: 
+      publish_date: 
+      post_id: 
+      user_id: 
+      isDelete: 
+      add_time: 
+
+  validate:
+    - eq:
+        - code
+        - "2000"
+    

@@ -1,0 +1,1231 @@
+2024-06-14 14:23:48.948 | ERROR    | utils.loggings:exception:40 - Ciphertext with incorrect length (not 128 bytes)
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000026D180CF4C0>
+    └ <Thread(Thread-9 (process_request_thread), started daemon 80628)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000026D180CF1A0>
+    └ <Thread(Thread-9 (process_request_thread), started daemon 80628)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-9 (process_request_thread), started daemon 80628)>
+    │    │        │    └ (<socket.socket fd=268, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49195)>, ('127.0.0.1', 49195))
+    │    │        └ <Thread(Thread-9 (process_request_thread), started daemon 80628)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>>
+    └ <Thread(Thread-9 (process_request_thread), started daemon 80628)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 49195)
+    │    │              └ <socket.socket fd=268, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49195)>
+    │    └ <function BaseServer.finish_request at 0x0000026D180D1260>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+    │    │                   │        └ ('127.0.0.1', 49195)
+    │    │                   └ <socket.socket fd=268, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49195)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000026D1A092840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDECF10>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000026D19ADB9C0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDECF10>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDECF10>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000026D1D3D5DD0>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDECF10>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000026D1D4AFCE0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000026D1D15F100>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026D1D4ADBC0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=268>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000026D1D3D5DD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026D1D4ADBC0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=268>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000026D1A62EAC0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000026D1A62E200>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000026D1A62E160>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'userID': '2024041018303074'}
+           │    │           │    │              │    └ 'users.ResetPassword'
+           │    │           │    │              └ <Rule '/api_1_0/users/reset_password/<userID>' (PUT, OPTIONS) -> users.ResetPassword>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000026D17B55F80>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000026D1A62E3E0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_limiter\extension.py", line 1298, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+           │    │  │     │                       │     │    └ {'userID': '2024041018303074'}
+           │    │  │     │                       │     └ ()
+           │    │  │     │                       └ <FunctionWrapper at 0x0000026D1D27AF20 for function at 0x0000026D1D29F420>
+           │    │  │     └ <Flask 'app'>
+           │    │  └ <module 'flask' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\flask\\__init__.py'>
+           │    └ ~R
+           └ <function cast at 0x0000026D17E19A80>
+
+  File "D:\project\interface-security\utils\decorators.py", line 60, in wrapper
+    return wrapped(*args, **kwargs)
+           │        │       └ {'userID': '2024041018303074'}
+           │        └ ()
+           └ <function reset_password at 0x0000026D1D29F420>
+
+  File "D:\project\interface-security\api_1_0\usersResource\urls.py", line 41, in reset_password
+    return UsersOtherResource.reset_password(userID)
+           │                  │              └ '2024041018303074'
+           │                  └ <classmethod(<function UsersOtherResource.reset_password at 0x0000026D1D29ECA0>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\usersOtherResource.py", line 80, in reset_password
+    res = UsersService.reset_password(**kwargs)
+          │            │                └ {'new_password': 'aaa', 'user_id': '2024041018303074'}
+          │            └ <classmethod(<function UsersService.reset_password at 0x0000026D1D29DC60>)>
+          └ <class 'service.usersService.UsersService'>
+
+  File "D:\project\interface-security\service\usersService.py", line 174, in reset_password
+    old_password = RSAEncryptionDecryption.decrypt(old_password)
+                   │                       │       └ 'aabb'
+                   │                       └ <classmethod(<function RSAEncryptionDecryption.decrypt at 0x0000026D1D29DBC0>)>
+                   └ <class 'utils.rsa_encryption_decryption.RSAEncryptionDecryption'>
+
+> File "D:\project\interface-security\utils\rsa_encryption_decryption.py", line 54, in decrypt
+    text = cipher.decrypt(base64.b64decode(cipher_text), "ERROR").decode("utf-8")
+           │      │       │      │         └ 'aabb'
+           │      │       │      └ <function b64decode at 0x0000026D181C1300>
+           │      │       └ <module 'base64' from 'C:\\Users\\One77\\.conda\\envs\\playwright\\Lib\\base64.py'>
+           │      └ <function PKCS115_Cipher.decrypt at 0x0000026D1D247600>
+           └ <Crypto.Cipher.PKCS1_v1_5.PKCS115_Cipher object at 0x0000026D1BD4DA90>
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\site-packages\Crypto\Cipher\PKCS1_v1_5.py", line 149, in decrypt
+    raise ValueError("Ciphertext with incorrect length (not %d bytes)" % k)
+                                                                         └ 128
+
+ValueError: Ciphertext with incorrect length (not 128 bytes)
+2024-06-14 14:23:53.483 | ERROR    | utils.loggings:exception:40 - Incorrect padding
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000026D180CF4C0>
+    └ <Thread(Thread-11 (process_request_thread), started daemon 41648)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000026D180CF1A0>
+    └ <Thread(Thread-11 (process_request_thread), started daemon 41648)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-11 (process_request_thread), started daemon 41648)>
+    │    │        │    └ (<socket.socket fd=784, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49199)>, ('127.0.0.1', 49199))
+    │    │        └ <Thread(Thread-11 (process_request_thread), started daemon 41648)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>>
+    └ <Thread(Thread-11 (process_request_thread), started daemon 41648)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 49199)
+    │    │              └ <socket.socket fd=784, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49199)>
+    │    └ <function BaseServer.finish_request at 0x0000026D180D1260>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+    │    │                   │        └ ('127.0.0.1', 49199)
+    │    │                   └ <socket.socket fd=784, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49199)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000026D1A092840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1D8A5610>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000026D19ADB9C0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1D8A5610>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1D8A5610>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000026D1D3D5DD0>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1D8A5610>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000026D1D52F7E0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000026D1D15F100>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026D1D52EAC0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=784>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000026D1D3D5DD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026D1D52EAC0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=784>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000026D1A62EAC0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000026D1A62E200>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000026D1A62E160>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'userID': '2024041018303074'}
+           │    │           │    │              │    └ 'users.ResetPassword'
+           │    │           │    │              └ <Rule '/api_1_0/users/reset_password/<userID>' (PUT, OPTIONS) -> users.ResetPassword>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000026D17B55F80>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000026D1A62E3E0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_limiter\extension.py", line 1298, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+           │    │  │     │                       │     │    └ {'userID': '2024041018303074'}
+           │    │  │     │                       │     └ ()
+           │    │  │     │                       └ <FunctionWrapper at 0x0000026D1D27AF20 for function at 0x0000026D1D29F420>
+           │    │  │     └ <Flask 'app'>
+           │    │  └ <module 'flask' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\flask\\__init__.py'>
+           │    └ ~R
+           └ <function cast at 0x0000026D17E19A80>
+
+  File "D:\project\interface-security\utils\decorators.py", line 60, in wrapper
+    return wrapped(*args, **kwargs)
+           │        │       └ {'userID': '2024041018303074'}
+           │        └ ()
+           └ <function reset_password at 0x0000026D1D29F420>
+
+  File "D:\project\interface-security\api_1_0\usersResource\urls.py", line 41, in reset_password
+    return UsersOtherResource.reset_password(userID)
+           │                  │              └ '2024041018303074'
+           │                  └ <classmethod(<function UsersOtherResource.reset_password at 0x0000026D1D29ECA0>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\usersOtherResource.py", line 80, in reset_password
+    res = UsersService.reset_password(**kwargs)
+          │            │                └ {'new_password': 'aaa', 'user_id': '2024041018303074'}
+          │            └ <classmethod(<function UsersService.reset_password at 0x0000026D1D29DC60>)>
+          └ <class 'service.usersService.UsersService'>
+
+  File "D:\project\interface-security\service\usersService.py", line 174, in reset_password
+    old_password = RSAEncryptionDecryption.decrypt(old_password)
+                   │                       │       └ 'aaa'
+                   │                       └ <classmethod(<function RSAEncryptionDecryption.decrypt at 0x0000026D1D29DBC0>)>
+                   └ <class 'utils.rsa_encryption_decryption.RSAEncryptionDecryption'>
+
+> File "D:\project\interface-security\utils\rsa_encryption_decryption.py", line 54, in decrypt
+    text = cipher.decrypt(base64.b64decode(cipher_text), "ERROR").decode("utf-8")
+           │      │       │      │         └ 'aaa'
+           │      │       │      └ <function b64decode at 0x0000026D181C1300>
+           │      │       └ <module 'base64' from 'C:\\Users\\One77\\.conda\\envs\\playwright\\Lib\\base64.py'>
+           │      └ <function PKCS115_Cipher.decrypt at 0x0000026D1D247600>
+           └ <Crypto.Cipher.PKCS1_v1_5.PKCS115_Cipher object at 0x0000026D1DFC2CD0>
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\base64.py", line 88, in b64decode
+    return binascii.a2b_base64(s, strict_mode=validate)
+           │        │          │              └ False
+           │        │          └ b'aaa'
+           │        └ <built-in function a2b_base64>
+           └ <module 'binascii' (built-in)>
+
+binascii.Error: Incorrect padding
+2024-06-14 14:24:08.554 | ERROR    | utils.loggings:exception:40 - Incorrect padding
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000026D180CF4C0>
+    └ <Thread(Thread-13 (process_request_thread), started daemon 27832)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000026D180CF1A0>
+    └ <Thread(Thread-13 (process_request_thread), started daemon 27832)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-13 (process_request_thread), started daemon 27832)>
+    │    │        │    └ (<socket.socket fd=996, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49211)>, ('127.0.0.1', 49211))
+    │    │        └ <Thread(Thread-13 (process_request_thread), started daemon 27832)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>>
+    └ <Thread(Thread-13 (process_request_thread), started daemon 27832)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 49211)
+    │    │              └ <socket.socket fd=996, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49211)>
+    │    └ <function BaseServer.finish_request at 0x0000026D180D1260>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+    │    │                   │        └ ('127.0.0.1', 49211)
+    │    │                   └ <socket.socket fd=996, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49211)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000026D1A092840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1D8A4790>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000026D19ADB9C0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1D8A4790>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1D8A4790>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000026D1D3D5DD0>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1D8A4790>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000026D1E0F9A80>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000026D1D15F100>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026D1E0FA7A0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=996>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000026D1D3D5DD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026D1E0FA7A0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=996>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000026D1A62EAC0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000026D1A62E200>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000026D1A62E160>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'userID': '2024041018303074'}
+           │    │           │    │              │    └ 'users.ResetPassword'
+           │    │           │    │              └ <Rule '/api_1_0/users/reset_password/<userID>' (PUT, OPTIONS) -> users.ResetPassword>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000026D17B55F80>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000026D1A62E3E0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_limiter\extension.py", line 1298, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+           │    │  │     │                       │     │    └ {'userID': '2024041018303074'}
+           │    │  │     │                       │     └ ()
+           │    │  │     │                       └ <FunctionWrapper at 0x0000026D1D27AF20 for function at 0x0000026D1D29F420>
+           │    │  │     └ <Flask 'app'>
+           │    │  └ <module 'flask' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\flask\\__init__.py'>
+           │    └ ~R
+           └ <function cast at 0x0000026D17E19A80>
+
+  File "D:\project\interface-security\utils\decorators.py", line 60, in wrapper
+    return wrapped(*args, **kwargs)
+           │        │       └ {'userID': '2024041018303074'}
+           │        └ ()
+           └ <function reset_password at 0x0000026D1D29F420>
+
+  File "D:\project\interface-security\api_1_0\usersResource\urls.py", line 41, in reset_password
+    return UsersOtherResource.reset_password(userID)
+           │                  │              └ '2024041018303074'
+           │                  └ <classmethod(<function UsersOtherResource.reset_password at 0x0000026D1D29ECA0>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\usersOtherResource.py", line 80, in reset_password
+    res = UsersService.reset_password(**kwargs)
+          │            │                └ {'new_password': 'aaa', 'user_id': '2024041018303074'}
+          │            └ <classmethod(<function UsersService.reset_password at 0x0000026D1D29DC60>)>
+          └ <class 'service.usersService.UsersService'>
+
+  File "D:\project\interface-security\service\usersService.py", line 174, in reset_password
+    old_password = RSAEncryptionDecryption.decrypt(old_password)
+                   │                       │       └ 'aaa'
+                   │                       └ <classmethod(<function RSAEncryptionDecryption.decrypt at 0x0000026D1D29DBC0>)>
+                   └ <class 'utils.rsa_encryption_decryption.RSAEncryptionDecryption'>
+
+> File "D:\project\interface-security\utils\rsa_encryption_decryption.py", line 54, in decrypt
+    text = cipher.decrypt(base64.b64decode(cipher_text), "ERROR").decode("utf-8")
+           │      │       │      │         └ 'aaa'
+           │      │       │      └ <function b64decode at 0x0000026D181C1300>
+           │      │       └ <module 'base64' from 'C:\\Users\\One77\\.conda\\envs\\playwright\\Lib\\base64.py'>
+           │      └ <function PKCS115_Cipher.decrypt at 0x0000026D1D247600>
+           └ <Crypto.Cipher.PKCS1_v1_5.PKCS115_Cipher object at 0x0000026D1DFAAB50>
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\base64.py", line 88, in b64decode
+    return binascii.a2b_base64(s, strict_mode=validate)
+           │        │          │              └ False
+           │        │          └ b'aaa'
+           │        └ <built-in function a2b_base64>
+           └ <module 'binascii' (built-in)>
+
+binascii.Error: Incorrect padding
+2024-06-14 14:24:08.910 | ERROR    | utils.loggings:exception:40 - Incorrect padding
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000026D180CF4C0>
+    └ <Thread(Thread-15 (process_request_thread), started daemon 30884)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000026D180CF1A0>
+    └ <Thread(Thread-15 (process_request_thread), started daemon 30884)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-15 (process_request_thread), started daemon 30884)>
+    │    │        │    └ (<socket.socket fd=824, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49212)>, ('127.0.0.1', 49212))
+    │    │        └ <Thread(Thread-15 (process_request_thread), started daemon 30884)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>>
+    └ <Thread(Thread-15 (process_request_thread), started daemon 30884)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 49212)
+    │    │              └ <socket.socket fd=824, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49212)>
+    │    └ <function BaseServer.finish_request at 0x0000026D180D1260>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+    │    │                   │        └ ('127.0.0.1', 49212)
+    │    │                   └ <socket.socket fd=824, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49212)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000026D1A092840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDEC090>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000026D19ADB9C0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDEC090>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDEC090>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000026D1D3D5DD0>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDEC090>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000026D1D8CE3E0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000026D1D15F380>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026D1D8CE480>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=824>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000026D1D3D5DD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026D1D8CE480>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=824>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000026D1A62EAC0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000026D1A62E200>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000026D1A62E160>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'userID': '2024041018303074'}
+           │    │           │    │              │    └ 'users.ResetPassword'
+           │    │           │    │              └ <Rule '/api_1_0/users/reset_password/<userID>' (PUT, OPTIONS) -> users.ResetPassword>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000026D17B55F80>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000026D1A62E3E0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_limiter\extension.py", line 1298, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+           │    │  │     │                       │     │    └ {'userID': '2024041018303074'}
+           │    │  │     │                       │     └ ()
+           │    │  │     │                       └ <FunctionWrapper at 0x0000026D1D27AF20 for function at 0x0000026D1D29F420>
+           │    │  │     └ <Flask 'app'>
+           │    │  └ <module 'flask' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\flask\\__init__.py'>
+           │    └ ~R
+           └ <function cast at 0x0000026D17E19A80>
+
+  File "D:\project\interface-security\utils\decorators.py", line 60, in wrapper
+    return wrapped(*args, **kwargs)
+           │        │       └ {'userID': '2024041018303074'}
+           │        └ ()
+           └ <function reset_password at 0x0000026D1D29F420>
+
+  File "D:\project\interface-security\api_1_0\usersResource\urls.py", line 41, in reset_password
+    return UsersOtherResource.reset_password(userID)
+           │                  │              └ '2024041018303074'
+           │                  └ <classmethod(<function UsersOtherResource.reset_password at 0x0000026D1D29ECA0>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\usersOtherResource.py", line 80, in reset_password
+    res = UsersService.reset_password(**kwargs)
+          │            │                └ {'new_password': 'aaa', 'user_id': '2024041018303074'}
+          │            └ <classmethod(<function UsersService.reset_password at 0x0000026D1D29DC60>)>
+          └ <class 'service.usersService.UsersService'>
+
+  File "D:\project\interface-security\service\usersService.py", line 174, in reset_password
+    old_password = RSAEncryptionDecryption.decrypt(old_password)
+                   │                       │       └ 'aaa'
+                   │                       └ <classmethod(<function RSAEncryptionDecryption.decrypt at 0x0000026D1D29DBC0>)>
+                   └ <class 'utils.rsa_encryption_decryption.RSAEncryptionDecryption'>
+
+> File "D:\project\interface-security\utils\rsa_encryption_decryption.py", line 54, in decrypt
+    text = cipher.decrypt(base64.b64decode(cipher_text), "ERROR").decode("utf-8")
+           │      │       │      │         └ 'aaa'
+           │      │       │      └ <function b64decode at 0x0000026D181C1300>
+           │      │       └ <module 'base64' from 'C:\\Users\\One77\\.conda\\envs\\playwright\\Lib\\base64.py'>
+           │      └ <function PKCS115_Cipher.decrypt at 0x0000026D1D247600>
+           └ <Crypto.Cipher.PKCS1_v1_5.PKCS115_Cipher object at 0x0000026D1D455990>
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\base64.py", line 88, in b64decode
+    return binascii.a2b_base64(s, strict_mode=validate)
+           │        │          │              └ False
+           │        │          └ b'aaa'
+           │        └ <built-in function a2b_base64>
+           └ <module 'binascii' (built-in)>
+
+binascii.Error: Incorrect padding
+2024-06-14 14:24:09.256 | ERROR    | utils.loggings:exception:40 - Incorrect padding
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000026D180CF4C0>
+    └ <Thread(Thread-17 (process_request_thread), started daemon 9420)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000026D180CF1A0>
+    └ <Thread(Thread-17 (process_request_thread), started daemon 9420)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-17 (process_request_thread), started daemon 9420)>
+    │    │        │    └ (<socket.socket fd=964, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49213)>, ('127.0.0.1', 49213))
+    │    │        └ <Thread(Thread-17 (process_request_thread), started daemon 9420)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>>
+    └ <Thread(Thread-17 (process_request_thread), started daemon 9420)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 49213)
+    │    │              └ <socket.socket fd=964, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49213)>
+    │    └ <function BaseServer.finish_request at 0x0000026D180D1260>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+    │    │                   │        └ ('127.0.0.1', 49213)
+    │    │                   └ <socket.socket fd=964, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49213)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000026D1A092840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1D230550>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000026D19ADB9C0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1D230550>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1D230550>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000026D1D3D5DD0>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1D230550>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000026D1D57DB20>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000026D1D15F100>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026D1D54D440>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=964>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000026D1D3D5DD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026D1D54D440>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=964>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000026D1A62EAC0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000026D1A62E200>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000026D1A62E160>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'userID': '2024041018303074'}
+           │    │           │    │              │    └ 'users.ResetPassword'
+           │    │           │    │              └ <Rule '/api_1_0/users/reset_password/<userID>' (PUT, OPTIONS) -> users.ResetPassword>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000026D17B55F80>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000026D1A62E3E0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_limiter\extension.py", line 1298, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+           │    │  │     │                       │     │    └ {'userID': '2024041018303074'}
+           │    │  │     │                       │     └ ()
+           │    │  │     │                       └ <FunctionWrapper at 0x0000026D1D27AF20 for function at 0x0000026D1D29F420>
+           │    │  │     └ <Flask 'app'>
+           │    │  └ <module 'flask' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\flask\\__init__.py'>
+           │    └ ~R
+           └ <function cast at 0x0000026D17E19A80>
+
+  File "D:\project\interface-security\utils\decorators.py", line 60, in wrapper
+    return wrapped(*args, **kwargs)
+           │        │       └ {'userID': '2024041018303074'}
+           │        └ ()
+           └ <function reset_password at 0x0000026D1D29F420>
+
+  File "D:\project\interface-security\api_1_0\usersResource\urls.py", line 41, in reset_password
+    return UsersOtherResource.reset_password(userID)
+           │                  │              └ '2024041018303074'
+           │                  └ <classmethod(<function UsersOtherResource.reset_password at 0x0000026D1D29ECA0>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\usersOtherResource.py", line 80, in reset_password
+    res = UsersService.reset_password(**kwargs)
+          │            │                └ {'new_password': 'aaa', 'user_id': '2024041018303074'}
+          │            └ <classmethod(<function UsersService.reset_password at 0x0000026D1D29DC60>)>
+          └ <class 'service.usersService.UsersService'>
+
+  File "D:\project\interface-security\service\usersService.py", line 174, in reset_password
+    old_password = RSAEncryptionDecryption.decrypt(old_password)
+                   │                       │       └ 'aaa'
+                   │                       └ <classmethod(<function RSAEncryptionDecryption.decrypt at 0x0000026D1D29DBC0>)>
+                   └ <class 'utils.rsa_encryption_decryption.RSAEncryptionDecryption'>
+
+> File "D:\project\interface-security\utils\rsa_encryption_decryption.py", line 54, in decrypt
+    text = cipher.decrypt(base64.b64decode(cipher_text), "ERROR").decode("utf-8")
+           │      │       │      │         └ 'aaa'
+           │      │       │      └ <function b64decode at 0x0000026D181C1300>
+           │      │       └ <module 'base64' from 'C:\\Users\\One77\\.conda\\envs\\playwright\\Lib\\base64.py'>
+           │      └ <function PKCS115_Cipher.decrypt at 0x0000026D1D247600>
+           └ <Crypto.Cipher.PKCS1_v1_5.PKCS115_Cipher object at 0x0000026D1D8A7710>
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\base64.py", line 88, in b64decode
+    return binascii.a2b_base64(s, strict_mode=validate)
+           │        │          │              └ False
+           │        │          └ b'aaa'
+           │        └ <built-in function a2b_base64>
+           └ <module 'binascii' (built-in)>
+
+binascii.Error: Incorrect padding
+2024-06-14 14:24:09.577 | ERROR    | utils.loggings:exception:40 - Incorrect padding
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000026D180CF4C0>
+    └ <Thread(Thread-19 (process_request_thread), started daemon 26068)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000026D180CF1A0>
+    └ <Thread(Thread-19 (process_request_thread), started daemon 26068)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-19 (process_request_thread), started daemon 26068)>
+    │    │        │    └ (<socket.socket fd=988, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49214)>, ('127.0.0.1', 49214))
+    │    │        └ <Thread(Thread-19 (process_request_thread), started daemon 26068)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>>
+    └ <Thread(Thread-19 (process_request_thread), started daemon 26068)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 49214)
+    │    │              └ <socket.socket fd=988, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49214)>
+    │    └ <function BaseServer.finish_request at 0x0000026D180D1260>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+    │    │                   │        └ ('127.0.0.1', 49214)
+    │    │                   └ <socket.socket fd=988, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49214)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000026D1A092840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDA0E50>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000026D19ADB9C0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDA0E50>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDA0E50>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000026D1D3D5DD0>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDA0E50>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000026D1CE1AAC0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000026D1D15F100>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026D1D63EF20>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=988>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000026D1D3D5DD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026D1D63EF20>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=988>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000026D1A62EAC0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000026D1A62E200>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000026D1A62E160>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'userID': '2024041018303074'}
+           │    │           │    │              │    └ 'users.ResetPassword'
+           │    │           │    │              └ <Rule '/api_1_0/users/reset_password/<userID>' (PUT, OPTIONS) -> users.ResetPassword>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000026D17B55F80>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000026D1A62E3E0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_limiter\extension.py", line 1298, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+           │    │  │     │                       │     │    └ {'userID': '2024041018303074'}
+           │    │  │     │                       │     └ ()
+           │    │  │     │                       └ <FunctionWrapper at 0x0000026D1D27AF20 for function at 0x0000026D1D29F420>
+           │    │  │     └ <Flask 'app'>
+           │    │  └ <module 'flask' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\flask\\__init__.py'>
+           │    └ ~R
+           └ <function cast at 0x0000026D17E19A80>
+
+  File "D:\project\interface-security\utils\decorators.py", line 60, in wrapper
+    return wrapped(*args, **kwargs)
+           │        │       └ {'userID': '2024041018303074'}
+           │        └ ()
+           └ <function reset_password at 0x0000026D1D29F420>
+
+  File "D:\project\interface-security\api_1_0\usersResource\urls.py", line 41, in reset_password
+    return UsersOtherResource.reset_password(userID)
+           │                  │              └ '2024041018303074'
+           │                  └ <classmethod(<function UsersOtherResource.reset_password at 0x0000026D1D29ECA0>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\usersOtherResource.py", line 80, in reset_password
+    res = UsersService.reset_password(**kwargs)
+          │            │                └ {'new_password': 'aaa', 'user_id': '2024041018303074'}
+          │            └ <classmethod(<function UsersService.reset_password at 0x0000026D1D29DC60>)>
+          └ <class 'service.usersService.UsersService'>
+
+  File "D:\project\interface-security\service\usersService.py", line 174, in reset_password
+    old_password = RSAEncryptionDecryption.decrypt(old_password)
+                   │                       │       └ 'aaa'
+                   │                       └ <classmethod(<function RSAEncryptionDecryption.decrypt at 0x0000026D1D29DBC0>)>
+                   └ <class 'utils.rsa_encryption_decryption.RSAEncryptionDecryption'>
+
+> File "D:\project\interface-security\utils\rsa_encryption_decryption.py", line 54, in decrypt
+    text = cipher.decrypt(base64.b64decode(cipher_text), "ERROR").decode("utf-8")
+           │      │       │      │         └ 'aaa'
+           │      │       │      └ <function b64decode at 0x0000026D181C1300>
+           │      │       └ <module 'base64' from 'C:\\Users\\One77\\.conda\\envs\\playwright\\Lib\\base64.py'>
+           │      └ <function PKCS115_Cipher.decrypt at 0x0000026D1D247600>
+           └ <Crypto.Cipher.PKCS1_v1_5.PKCS115_Cipher object at 0x0000026D1D8A6990>
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\base64.py", line 88, in b64decode
+    return binascii.a2b_base64(s, strict_mode=validate)
+           │        │          │              └ False
+           │        │          └ b'aaa'
+           │        └ <built-in function a2b_base64>
+           └ <module 'binascii' (built-in)>
+
+binascii.Error: Incorrect padding
+2024-06-14 14:28:36.759 | ERROR    | utils.loggings:exception:40 - Incorrect padding
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000026D180CF4C0>
+    └ <Thread(Thread-27 (process_request_thread), started daemon 83428)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000026D180CF1A0>
+    └ <Thread(Thread-27 (process_request_thread), started daemon 83428)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-27 (process_request_thread), started daemon 83428)>
+    │    │        │    └ (<socket.socket fd=932, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49309)>, ('127.0.0.1', 49309))
+    │    │        └ <Thread(Thread-27 (process_request_thread), started daemon 83428)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>>
+    └ <Thread(Thread-27 (process_request_thread), started daemon 83428)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 49309)
+    │    │              └ <socket.socket fd=932, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49309)>
+    │    └ <function BaseServer.finish_request at 0x0000026D180D1260>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+    │    │                   │        └ ('127.0.0.1', 49309)
+    │    │                   └ <socket.socket fd=932, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 49309)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000026D1A092840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDF1110>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000026D19ADB9C0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDF1110>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDF1110>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000026D1D3D5DD0>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026D1CEE8710>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026D1DDF1110>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000026D1D576B60>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000026D1D15F100>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026D1D54D440>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=932>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000026D1D3D5DD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026D1D54D440>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=932>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000026D1A62EAC0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000026D1A62E200>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000026D1A62E160>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'userID': '2024041018303074'}
+           │    │           │    │              │    └ 'users.ResetPassword'
+           │    │           │    │              └ <Rule '/api_1_0/users/reset_password/<userID>' (PUT, OPTIONS) -> users.ResetPassword>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000026D17B55F80>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000026D1A62E3E0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_limiter\extension.py", line 1298, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+           │    │  │     │                       │     │    └ {'userID': '2024041018303074'}
+           │    │  │     │                       │     └ ()
+           │    │  │     │                       └ <FunctionWrapper at 0x0000026D1D27AF20 for function at 0x0000026D1D29F420>
+           │    │  │     └ <Flask 'app'>
+           │    │  └ <module 'flask' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\flask\\__init__.py'>
+           │    └ ~R
+           └ <function cast at 0x0000026D17E19A80>
+
+  File "D:\project\interface-security\utils\decorators.py", line 60, in wrapper
+    return wrapped(*args, **kwargs)
+           │        │       └ {'userID': '2024041018303074'}
+           │        └ ()
+           └ <function reset_password at 0x0000026D1D29F420>
+
+  File "D:\project\interface-security\api_1_0\usersResource\urls.py", line 41, in reset_password
+    return UsersOtherResource.reset_password(userID)
+           │                  │              └ '2024041018303074'
+           │                  └ <classmethod(<function UsersOtherResource.reset_password at 0x0000026D1D29ECA0>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\usersOtherResource.py", line 80, in reset_password
+    res = UsersService.reset_password(**kwargs)
+          │            │                └ {'user_id': '2024041018303074'}
+          │            └ <classmethod(<function UsersService.reset_password at 0x0000026D1D29DC60>)>
+          └ <class 'service.usersService.UsersService'>
+
+  File "D:\project\interface-security\service\usersService.py", line 174, in reset_password
+    old_password = RSAEncryptionDecryption.decrypt(old_password)
+                   │                       │       └ 'aaa'
+                   │                       └ <classmethod(<function RSAEncryptionDecryption.decrypt at 0x0000026D1D29DBC0>)>
+                   └ <class 'utils.rsa_encryption_decryption.RSAEncryptionDecryption'>
+
+> File "D:\project\interface-security\utils\rsa_encryption_decryption.py", line 54, in decrypt
+    text = cipher.decrypt(base64.b64decode(cipher_text), "ERROR").decode("utf-8")
+           │      │       │      │         └ 'aaa'
+           │      │       │      └ <function b64decode at 0x0000026D181C1300>
+           │      │       └ <module 'base64' from 'C:\\Users\\One77\\.conda\\envs\\playwright\\Lib\\base64.py'>
+           │      └ <function PKCS115_Cipher.decrypt at 0x0000026D1D247600>
+           └ <Crypto.Cipher.PKCS1_v1_5.PKCS115_Cipher object at 0x0000026D1CFFB490>
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\base64.py", line 88, in b64decode
+    return binascii.a2b_base64(s, strict_mode=validate)
+           │        │          │              └ False
+           │        │          └ b'aaa'
+           │        └ <built-in function a2b_base64>
+           └ <module 'binascii' (built-in)>
+
+binascii.Error: Incorrect padding
+2024-06-14 14:47:13.688 | ERROR    | utils.loggings:exception:40 - type object 'UsersService' has no attribute 'usertype'
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000201AAE8F4C0>
+    └ <Thread(Thread-5 (process_request_thread), started daemon 52232)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000201AAE8F1A0>
+    └ <Thread(Thread-5 (process_request_thread), started daemon 52232)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-5 (process_request_thread), started daemon 52232)>
+    │    │        │    └ (<socket.socket fd=1016, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 50179)>, ('127.0.0.1', 501...
+    │    │        └ <Thread(Thread-5 (process_request_thread), started daemon 52232)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x00000201AFFCCB50>>
+    └ <Thread(Thread-5 (process_request_thread), started daemon 52232)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 50179)
+    │    │              └ <socket.socket fd=1016, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 50179)>
+    │    └ <function BaseServer.finish_request at 0x00000201AAE91260>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x00000201AFFCCB50>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x00000201AFFCCB50>
+    │    │                   │        └ ('127.0.0.1', 50179)
+    │    │                   └ <socket.socket fd=1016, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 50179)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x00000201AFFCCB50>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x00000201ACE52840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000201B0C80690>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x00000201AC89B9C0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000201B0C80690>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x00000201B0C80690>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x00000201B0195C90>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x00000201AFFCCB50>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x00000201B0C80690>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x00000201B0335B20>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x00000201AFFD6E80>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000201B027F240>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1016>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x00000201B0195C90>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000201B027F240>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1016>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x00000201AD3EEAC0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x00000201AD3EE200>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x00000201AD3EE160>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.Login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (OPTIONS, POST) -> users.Login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x00000201AA955F80>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x00000201AD3EE3E0>
+           └ <Flask 'app'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\urls.py", line 24, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x00000201B003EE80>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\usersOtherResource.py", line 31, in login
+    res = UsersService.login(**kwargs)
+          │            │       └ {'username': 'qq2', 'password': 'aaa'}
+          │            └ <classmethod(<function UsersService.login at 0x00000201AFDCD620>)>
+          └ <class 'service.usersService.UsersService'>
+
+> File "D:\project\interface-security\service\usersService.py", line 47, in login
+    cls.usertype
+    └ <class 'service.usersService.UsersService'>
+
+AttributeError: type object 'UsersService' has no attribute 'usertype'
+2024-06-14 14:49:09.877 | ERROR    | utils.loggings:exception:40 - type object 'UsersService' has no attribute 'usertype'
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002024810F4C0>
+    └ <Thread(Thread-3 (process_request_thread), started daemon 26736)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002024810F1A0>
+    └ <Thread(Thread-3 (process_request_thread), started daemon 26736)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-3 (process_request_thread), started daemon 26736)>
+    │    │        │    └ (<socket.socket fd=848, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 50202)>, ('127.0.0.1', 50202))
+    │    │        └ <Thread(Thread-3 (process_request_thread), started daemon 26736)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x000002024D28FE90>>
+    └ <Thread(Thread-3 (process_request_thread), started daemon 26736)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 50202)
+    │    │              └ <socket.socket fd=848, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 50202)>
+    │    └ <function BaseServer.finish_request at 0x0000020248111260>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000002024D28FE90>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x000002024D28FE90>
+    │    │                   │        └ ('127.0.0.1', 50202)
+    │    │                   └ <socket.socket fd=848, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 50202)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000002024D28FE90>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000002024A0D2840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002024D45FCD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000020249B1B9C0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002024D45FCD0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000002024D45FCD0>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002024D415A50>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000002024D28FE90>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000002024D45FCD0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000002024DAA8360>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000002024D19F100>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002024DAA8400>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=848>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002024D415A50>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002024DAA8400>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=848>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x000002024A66EAC0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000002024A66E200>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000002024A66E160>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.Login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (OPTIONS, POST) -> users.Login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000020247B95F80>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000002024A66E3E0>
+           └ <Flask 'app'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\urls.py", line 24, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x000002024D2BEE80>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\usersOtherResource.py", line 31, in login
+    res = UsersService.login(**kwargs)
+          │            │       └ {'username': 'qq2', 'password': 'aaa'}
+          │            └ <classmethod(<function UsersService.login at 0x000002024D03D620>)>
+          └ <class 'service.usersService.UsersService'>
+
+> File "D:\project\interface-security\service\usersService.py", line 47, in login
+    cls.usertype
+    └ <class 'service.usersService.UsersService'>
+
+AttributeError: type object 'UsersService' has no attribute 'usertype'
+2024-06-14 21:17:34.858 | ERROR    | utils.loggings:exception:40 - type object 'UsersService' has no attribute 'is_deleted'
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000132FF66F4C0>
+    └ <Thread(Thread-5 (process_request_thread), started daemon 55828)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000132FF66F1A0>
+    └ <Thread(Thread-5 (process_request_thread), started daemon 55828)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-5 (process_request_thread), started daemon 55828)>
+    │    │        │    └ (<socket.socket fd=1096, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 60528)>, ('127.0.0.1', 605...
+    │    │        └ <Thread(Thread-5 (process_request_thread), started daemon 55828)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x00000132847ECCD0>>
+    └ <Thread(Thread-5 (process_request_thread), started daemon 55828)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 60528)
+    │    │              └ <socket.socket fd=1096, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 60528)>
+    │    └ <function BaseServer.finish_request at 0x00000132FF671260>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x00000132847ECCD0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x00000132847ECCD0>
+    │    │                   │        └ ('127.0.0.1', 60528)
+    │    │                   └ <socket.socket fd=1096, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 60528)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x00000132847ECCD0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x00000132FFE22840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000132849BB9D0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x00000132FFC6B9C0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000132849BB9D0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x00000132849BB9D0>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000013284977250>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x00000132847ECCD0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x00000132849BB9D0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000013285493060>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x00000132846B7100>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000013285493100>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1096>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000013284977250>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000013285493100>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1096>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x0000013281C1EAC0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000013281C1E200>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000013281C1E160>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.SqlInject'
+           │    │           │    │              └ <Rule '/api_1_0/users/sql_inject_test' (POST, OPTIONS) -> users.SqlInject>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x00000132FF165F80>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000013281C1E3E0>
+           └ <Flask 'app'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\urls.py", line 45, in sql_inject_test
+    return UsersOtherResource.sql_inject_test()
+           │                  └ <classmethod(<function UsersOtherResource.sql_inject_test at 0x000001328483EF20>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\usersOtherResource.py", line 98, in sql_inject_test
+    res = UsersService.sql_inject_test(**kwargs)
+          │            │                 └ {}
+          │            └ <classmethod(<function UsersService.sql_inject_test at 0x000001328483DE40>)>
+          └ <class 'service.usersService.UsersService'>
+
+> File "D:\project\interface-security\service\usersService.py", line 204, in sql_inject_test
+    .filter(cls.is_deleted == 0, cls.username == username).all()
+            │                    │   │           └ None
+            │                    │   └ <sqlalchemy.orm.attributes.InstrumentedAttribute object at 0x000001328483E700>
+            │                    └ <class 'service.usersService.UsersService'>
+            └ <class 'service.usersService.UsersService'>
+
+AttributeError: type object 'UsersService' has no attribute 'is_deleted'

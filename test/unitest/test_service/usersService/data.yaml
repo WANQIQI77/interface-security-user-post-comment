@@ -1,0 +1,18 @@
+-
+  module_name: usersService
+  class_name: usersService
+  function_name: xxx
+  params:
+      autoID: 
+      user_id: 
+      usertype: 
+      username: 
+      password: 
+      isDelete: 
+      add_time: 
+
+  validate:
+    - eq:
+        - code
+        - "2000"
+    

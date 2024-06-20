@@ -1,0 +1,1162 @@
+2024-06-11 22:47:04.204 | ERROR    | utils.loggings:exception:40 - (pymysql.err.IntegrityError) (1062, "Duplicate entry 'yzl' for key 'users.username'")
+[SQL: INSERT INTO users (user_id, usertype, username, password, add_time) VALUES (%(user_id)s, %(usertype)s, %(username)s, %(password)s, %(add_time)s)]
+[parameters: {'user_id': '2024061122476938', 'usertype': '0', 'username': 'yzl', 'password': 'yzlsdbd', 'add_time': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x0000020FC88E7100>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000020FC8CDA5D0>
+    └ <sqlalchemy.engine.base.Connection object at 0x0000020FCA3B9350>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'user_id': '2024061122476938', 'usertype': '0', 'username': 'yzl', 'password': 'yzlsdbd', 'add_time': None}
+    │      │       └ 'INSERT INTO users (user_id, usertype, username, password, add_time) VALUES (%(user_id)s, %(usertype)s, %(username)s, %(passw...
+    │      └ <function Cursor.execute at 0x0000020FC8E72C00>
+    └ <pymysql.cursors.Cursor object at 0x0000020FCA3B9510>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO users (user_id, usertype, username, password, add_time) VALUES ('2024061122476938', '0', 'yzl', 'yzlsdbd', NULL)"
+             │    └ <function Cursor._query at 0x0000020FC8E73100>
+             └ <pymysql.cursors.Cursor object at 0x0000020FCA3B9510>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO users (user_id, usertype, username, password, add_time) VALUES ('2024061122476938', '0', 'yzl', 'yzlsdbd', NULL)"
+    │    └ <function Connection.query at 0x0000020FC8E92B60>
+    └ <pymysql.connections.Connection object at 0x0000020FC9024BD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x0000020FC8E932E0>
+    │    │                └ <pymysql.connections.Connection object at 0x0000020FC9024BD0>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x0000020FC9024BD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x0000020FC8E93BA0>
+    └ <pymysql.connections.MySQLResult object at 0x0000020FCA3B9590>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x0000020FCA3B9590>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x0000020FC8E91260>
+    └ <pymysql.protocol.MysqlPacket object at 0x0000020FCA3563B0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x0000020FCA3563B0>
+    │   └ <function raise_mysql_exception at 0x0000020FC8D80C20>
+    └ <module 'pymysql.err' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\pymysql\\err.py'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Duplicate entry 'yzl' for key 'users.username'"
+          │          └ 1062
+          └ <class 'pymysql.err.IntegrityError'>
+
+pymysql.err.IntegrityError: (1062, "Duplicate entry 'yzl' for key 'users.username'")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000020FC513E200>
+    └ <Thread(Thread-5 (process_request_thread), started daemon 31280)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000020FC513DEE0>
+    └ <Thread(Thread-5 (process_request_thread), started daemon 31280)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-5 (process_request_thread), started daemon 31280)>
+    │    │        │    └ (<socket.socket fd=1076, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 61648)>, ('127.0.0.1', 616...
+    │    │        └ <Thread(Thread-5 (process_request_thread), started daemon 31280)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x0000020FC8FDABD0>>
+    └ <Thread(Thread-5 (process_request_thread), started daemon 31280)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 61648)
+    │    │              └ <socket.socket fd=1076, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 61648)>
+    │    └ <function BaseServer.finish_request at 0x0000020FC513FF60>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000020FC8FDABD0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000020FC8FDABD0>
+    │    │                   │        └ ('127.0.0.1', 61648)
+    │    │                   └ <socket.socket fd=1076, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 61648)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000020FC8FDABD0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000020FC7312700>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000020FC9027CD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000020FC6D3A840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000020FC9027CD0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000020FC9027CD0>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000020FC8FDABD0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000020FC9027CD0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000020FC8FF5E40>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 323, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000020FC8FF5DA0>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1076>, 'wsgi.errors': <_io.TextIOW...
+                       └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000020FC8FF5DA0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1076>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x0000020FC78AE980>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000020FC78AE0C0>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000020FC78AE020>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.Users'
+           │    │           │    │              └ <Rule '/api_1_0/users' (PUT, POST, OPTIONS, HEAD, GET, DELETE) -> users.Users>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000020FC4E2DB20>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000020FC78AE2A0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function View.as_view.<locals>.view at 0x0000020FC8EB4680>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+           │                       │    │                   └ {}
+           │                       │    └ <function Resource.dispatch_request at 0x0000020FC8E97F60>
+           │                       └ <api_1_0.usersResource.usersResource.UsersResource object at 0x0000020FCA3AB810>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+           │     │       └ {}
+           │     └ ()
+           └ <bound method UsersResource.post of <class 'api_1_0.usersResource.usersResource.UsersResource'>>
+
+  File "D:\project\softtest\course design\soft_test_blog\api_1_0\usersResource\usersResource.py", line 117, in post
+    res = UsersController.add(**kwargs)
+          │               │     └ {'usertype': '0', 'username': 'yzl', 'password': 'yzlsdbd'}
+          │               └ <classmethod(<function UsersController.add at 0x0000020FC8FB45E0>)>
+          └ <class 'controller.usersController.UsersController'>
+
+> File "D:\project\softtest\course design\soft_test_blog\controller\usersController.py", line 36, in add
+    db.session.commit()
+    │  │       └ <function scoped_session.commit at 0x0000020FC8C8C7C0>
+    │  └ <sqlalchemy.orm.scoping.scoped_session object at 0x0000020FC78E2150>
+    └ <SQLAlchemy mysql+pymysql://root:***@localhost:3306/blogsys?charset=utf8>
+
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\scoping.py", line 598, in commit
+    return self._proxied.commit()
+           │    └ <property object at 0x0000020FC8C7F740>
+           └ <sqlalchemy.orm.scoping.scoped_session object at 0x0000020FC78E2150>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+    │     └ <function SessionTransaction.commit at 0x0000020FC8BD6E80>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000020FC8FE6670>
+  File "<string>", line 2, in commit
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {'_to_root': True}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000020FC8FE6670>
+                └ <function SessionTransaction.commit at 0x0000020FC8BD6CA0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1256, in commit
+    self._prepare_impl()
+    │    └ <function SessionTransaction._prepare_impl at 0x0000020FC8BD6B60>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000020FC8FE6670>
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000020FC8FE6670>
+                └ <function SessionTransaction._prepare_impl at 0x0000020FC8BD6AC0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1231, in _prepare_impl
+    self.session.flush()
+    │    │       └ <function Session.flush at 0x0000020FC8BE6CA0>
+    │    └ <sqlalchemy.orm.session.Session object at 0x0000020FCA3B9090>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000020FC8FE6670>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4312, in flush
+    self._flush(objects)
+    │    │      └ None
+    │    └ <function Session._flush at 0x0000020FC8BE6E80>
+    └ <sqlalchemy.orm.session.Session object at 0x0000020FCA3B9090>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4447, in _flush
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\sqlalchemy\\util\\__ini...
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x0000020FCA3B9A00>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ IntegrityError('(pymysql.err.IntegrityError) (1062, "Duplicate entry \'yzl\' for key \'users.username\'")')
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4408, in _flush
+    flush_context.execute()
+    │             └ <function UOWTransaction.execute at 0x0000020FC8BB37E0>
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x0000020FCA3B9010>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    │   │       └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x0000020FCA3B9010>
+    │   └ <function SaveUpdateAll.execute at 0x0000020FC8BD4360>
+    └ SaveUpdateAll(Mapper[Users(users)])
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    │    │         │               └ <function save_obj at 0x0000020FC8B13100>
+    │    │         └ <module 'sqlalchemy.orm.persistence' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\sqlalchemy\\...
+    │    └ <module 'sqlalchemy.util.preloaded' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\sqlalchemy\\u...
+    └ <module 'sqlalchemy.util' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\sqlalchemy\\util\\__ini...
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    └ <function _emit_insert_statements at 0x0000020FC8B9A7A0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 1227, in _emit_insert_statements
+    result = connection.execute(
+             │          └ <function Connection.execute at 0x0000020FC8843BA0>
+             └ <sqlalchemy.engine.base.Connection object at 0x0000020FCA3B9350>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.dml.Insert object at 0x0000020FCA3A91D0>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\elements.py", line 517, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x0000020FC8843EC0>
+           └ <sqlalchemy.engine.base.Connection object at 0x0000020FCA3B9350>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x0000020FC884C0E0>
+          └ <sqlalchemy.engine.base.Connection object at 0x0000020FCA3B9350>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x0000020FC884C180>
+           └ <sqlalchemy.engine.base.Connection object at 0x0000020FCA3B9350>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x0000020FC884C400>
+    └ <sqlalchemy.engine.base.Connection object at 0x0000020FCA3B9350>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2344, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ IntegrityError(1062, "Duplicate entry 'yzl' for key 'users.username'")
+          │                    │              └ (<class 'pymysql.err.IntegrityError'>, IntegrityError(1062, "Duplicate entry 'yzl' for key 'users.username'"), <traceback obj...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ IntegrityError('(pymysql.err.IntegrityError) (1062, "Duplicate entry \'yzl\' for key \'users.username\'")')
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x0000020FC88E7100>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000020FC8CDA5D0>
+    └ <sqlalchemy.engine.base.Connection object at 0x0000020FCA3B9350>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'user_id': '2024061122476938', 'usertype': '0', 'username': 'yzl', 'password': 'yzlsdbd', 'add_time': None}
+    │      │       └ 'INSERT INTO users (user_id, usertype, username, password, add_time) VALUES (%(user_id)s, %(usertype)s, %(username)s, %(passw...
+    │      └ <function Cursor.execute at 0x0000020FC8E72C00>
+    └ <pymysql.cursors.Cursor object at 0x0000020FCA3B9510>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO users (user_id, usertype, username, password, add_time) VALUES ('2024061122476938', '0', 'yzl', 'yzlsdbd', NULL)"
+             │    └ <function Cursor._query at 0x0000020FC8E73100>
+             └ <pymysql.cursors.Cursor object at 0x0000020FCA3B9510>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO users (user_id, usertype, username, password, add_time) VALUES ('2024061122476938', '0', 'yzl', 'yzlsdbd', NULL)"
+    │    └ <function Connection.query at 0x0000020FC8E92B60>
+    └ <pymysql.connections.Connection object at 0x0000020FC9024BD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x0000020FC8E932E0>
+    │    │                └ <pymysql.connections.Connection object at 0x0000020FC9024BD0>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x0000020FC9024BD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x0000020FC8E93BA0>
+    └ <pymysql.connections.MySQLResult object at 0x0000020FCA3B9590>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x0000020FCA3B9590>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x0000020FC8E91260>
+    └ <pymysql.protocol.MysqlPacket object at 0x0000020FCA3563B0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x0000020FCA3563B0>
+    │   └ <function raise_mysql_exception at 0x0000020FC8D80C20>
+    └ <module 'pymysql.err' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\pymysql\\err.py'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Duplicate entry 'yzl' for key 'users.username'"
+          │          └ 1062
+          └ <class 'pymysql.err.IntegrityError'>
+
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, "Duplicate entry 'yzl' for key 'users.username'")
+[SQL: INSERT INTO users (user_id, usertype, username, password, add_time) VALUES (%(user_id)s, %(usertype)s, %(username)s, %(password)s, %(add_time)s)]
+[parameters: {'user_id': '2024061122476938', 'usertype': '0', 'username': 'yzl', 'password': 'yzlsdbd', 'add_time': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-06-11 22:54:33.844 | ERROR    | utils.loggings:exception:40 - (pymysql.err.IntegrityError) (1062, "Duplicate entry 'yzl1' for key 'users.username'")
+[SQL: INSERT INTO users (user_id, usertype, username, password, `isDelete`, add_time) VALUES (%(user_id)s, %(usertype)s, %(username)s, %(password)s, %(isDelete)s, %(add_time)s)]
+[parameters: {'user_id': '2024061122543280', 'usertype': '0', 'username': 'yzl1', 'password': 'yzlsdbd', 'isDelete': 0, 'add_time': '2024-06-11 22:54:33'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001DB21F17100>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000001DB2230BD10>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001DB22658AD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'user_id': '2024061122543280', 'usertype': '0', 'username': 'yzl1', 'password': 'yzlsdbd', 'isDelete': 0, 'add_time': '2024-...
+    │      │       └ 'INSERT INTO users (user_id, usertype, username, password, `isDelete`, add_time) VALUES (%(user_id)s, %(usertype)s, %(usernam...
+    │      └ <function Cursor.execute at 0x000001DB224A2C00>
+    └ <pymysql.cursors.Cursor object at 0x000001DB2265A910>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO users (user_id, usertype, username, password, `isDelete`, add_time) VALUES ('2024061122543280', '0', 'yzl1', 'yz...
+             │    └ <function Cursor._query at 0x000001DB224A3100>
+             └ <pymysql.cursors.Cursor object at 0x000001DB2265A910>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO users (user_id, usertype, username, password, `isDelete`, add_time) VALUES ('2024061122543280', '0', 'yzl1', 'yz...
+    │    └ <function Connection.query at 0x000001DB224C2B60>
+    └ <pymysql.connections.Connection object at 0x000001DB22658C50>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000001DB224C32E0>
+    │    │                └ <pymysql.connections.Connection object at 0x000001DB22658C50>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x000001DB22658C50>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000001DB224C3BA0>
+    └ <pymysql.connections.MySQLResult object at 0x000001DB2265B690>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000001DB2265B690>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001DB224C1260>
+    └ <pymysql.protocol.MysqlPacket object at 0x000001DB225B6E00>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000001DB225B6E00>
+    │   └ <function raise_mysql_exception at 0x000001DB223B0C20>
+    └ <module 'pymysql.err' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\pymysql\\err.py'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Duplicate entry 'yzl1' for key 'users.username'"
+          │          └ 1062
+          └ <class 'pymysql.err.IntegrityError'>
+
+pymysql.err.IntegrityError: (1062, "Duplicate entry 'yzl1' for key 'users.username'")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001DB1E72A200>
+    └ <Thread(Thread-1 (process_request_thread), started daemon 15228)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001DB1E729EE0>
+    └ <Thread(Thread-1 (process_request_thread), started daemon 15228)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (process_request_thread), started daemon 15228)>
+    │    │        │    └ (<socket.socket fd=856, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 61839)>, ('127.0.0.1', 61839))
+    │    │        └ <Thread(Thread-1 (process_request_thread), started daemon 15228)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x000001DB2260AB90>>
+    └ <Thread(Thread-1 (process_request_thread), started daemon 15228)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 61839)
+    │    │              └ <socket.socket fd=856, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 61839)>
+    │    └ <function BaseServer.finish_request at 0x000001DB1E72BF60>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001DB2260AB90>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001DB2260AB90>
+    │    │                   │        └ ('127.0.0.1', 61839)
+    │    │                   └ <socket.socket fd=856, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 61839)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001DB2260AB90>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001DB20942700>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001DB2261EC90>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001DB2035A840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001DB2261EC90>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001DB2261EC90>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001DB2260AB90>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001DB2261EC90>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001DB22629E40>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 323, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001DB22629DA0>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=856>, 'wsgi.errors': <_io.TextIOWr...
+                       └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001DB22629DA0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=856>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x000001DB20EDE980>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001DB20EDE0C0>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001DB20EDE020>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.Users'
+           │    │           │    │              └ <Rule '/api_1_0/users' (OPTIONS, POST, DELETE, PUT, HEAD, GET) -> users.Users>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001DB1E47DB20>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001DB20EDE2A0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function View.as_view.<locals>.view at 0x000001DB224E4680>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+           │                       │    │                   └ {}
+           │                       │    └ <function Resource.dispatch_request at 0x000001DB224C7F60>
+           │                       └ <api_1_0.usersResource.usersResource.UsersResource object at 0x000001DB2263E150>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+           │     │       └ {}
+           │     └ ()
+           └ <bound method UsersResource.post of <class 'api_1_0.usersResource.usersResource.UsersResource'>>
+
+  File "D:\project\softtest\course design\soft_test_blog\api_1_0\usersResource\usersResource.py", line 117, in post
+    res = UsersController.add(**kwargs)
+          │               │     └ {'usertype': '0', 'username': 'yzl1', 'password': 'yzlsdbd'}
+          │               └ <classmethod(<function UsersController.add at 0x000001DB225E45E0>)>
+          └ <class 'controller.usersController.UsersController'>
+
+> File "D:\project\softtest\course design\soft_test_blog\controller\usersController.py", line 37, in add
+    db.session.commit()
+    │  │       └ <function scoped_session.commit at 0x000001DB222BC7C0>
+    │  └ <sqlalchemy.orm.scoping.scoped_session object at 0x000001DB20F12390>
+    └ <SQLAlchemy mysql+pymysql://root:***@localhost:3306/blogsys?charset=utf8>
+
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\scoping.py", line 598, in commit
+    return self._proxied.commit()
+           │    └ <property object at 0x000001DB222AF5B0>
+           └ <sqlalchemy.orm.scoping.scoped_session object at 0x000001DB20F12390>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+    │     └ <function SessionTransaction.commit at 0x000001DB22206E80>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001DB225A77F0>
+  File "<string>", line 2, in commit
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {'_to_root': True}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001DB225A77F0>
+                └ <function SessionTransaction.commit at 0x000001DB22206CA0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1256, in commit
+    self._prepare_impl()
+    │    └ <function SessionTransaction._prepare_impl at 0x000001DB22206B60>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001DB225A77F0>
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001DB225A77F0>
+                └ <function SessionTransaction._prepare_impl at 0x000001DB22206AC0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1231, in _prepare_impl
+    self.session.flush()
+    │    │       └ <function Session.flush at 0x000001DB22216CA0>
+    │    └ <sqlalchemy.orm.session.Session object at 0x000001DB2263EE90>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001DB225A77F0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4312, in flush
+    self._flush(objects)
+    │    │      └ None
+    │    └ <function Session._flush at 0x000001DB22216E80>
+    └ <sqlalchemy.orm.session.Session object at 0x000001DB2263EE90>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4447, in _flush
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\sqlalchemy\\util\\__ini...
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x000001DB23980400>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ IntegrityError('(pymysql.err.IntegrityError) (1062, "Duplicate entry \'yzl1\' for key \'users.username\'")')
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4408, in _flush
+    flush_context.execute()
+    │             └ <function UOWTransaction.execute at 0x000001DB221E37E0>
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x000001DB226586D0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    │   │       └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x000001DB226586D0>
+    │   └ <function SaveUpdateAll.execute at 0x000001DB22204360>
+    └ SaveUpdateAll(Mapper[Users(users)])
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    │    │         │               └ <function save_obj at 0x000001DB22143100>
+    │    │         └ <module 'sqlalchemy.orm.persistence' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\sqlalchemy\\...
+    │    └ <module 'sqlalchemy.util.preloaded' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\sqlalchemy\\u...
+    └ <module 'sqlalchemy.util' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\sqlalchemy\\util\\__ini...
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    └ <function _emit_insert_statements at 0x000001DB221CA7A0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 1227, in _emit_insert_statements
+    result = connection.execute(
+             │          └ <function Connection.execute at 0x000001DB21E73BA0>
+             └ <sqlalchemy.engine.base.Connection object at 0x000001DB22658AD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.dml.Insert object at 0x000001DB2265A350>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\elements.py", line 517, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x000001DB21E73EC0>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001DB22658AD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x000001DB21E7C0E0>
+          └ <sqlalchemy.engine.base.Connection object at 0x000001DB22658AD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x000001DB21E7C180>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001DB22658AD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x000001DB21E7C400>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001DB22658AD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2344, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ IntegrityError(1062, "Duplicate entry 'yzl1' for key 'users.username'")
+          │                    │              └ (<class 'pymysql.err.IntegrityError'>, IntegrityError(1062, "Duplicate entry 'yzl1' for key 'users.username'"), <traceback ob...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ IntegrityError('(pymysql.err.IntegrityError) (1062, "Duplicate entry \'yzl1\' for key \'users.username\'")')
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001DB21F17100>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000001DB2230BD10>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001DB22658AD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'user_id': '2024061122543280', 'usertype': '0', 'username': 'yzl1', 'password': 'yzlsdbd', 'isDelete': 0, 'add_time': '2024-...
+    │      │       └ 'INSERT INTO users (user_id, usertype, username, password, `isDelete`, add_time) VALUES (%(user_id)s, %(usertype)s, %(usernam...
+    │      └ <function Cursor.execute at 0x000001DB224A2C00>
+    └ <pymysql.cursors.Cursor object at 0x000001DB2265A910>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO users (user_id, usertype, username, password, `isDelete`, add_time) VALUES ('2024061122543280', '0', 'yzl1', 'yz...
+             │    └ <function Cursor._query at 0x000001DB224A3100>
+             └ <pymysql.cursors.Cursor object at 0x000001DB2265A910>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO users (user_id, usertype, username, password, `isDelete`, add_time) VALUES ('2024061122543280', '0', 'yzl1', 'yz...
+    │    └ <function Connection.query at 0x000001DB224C2B60>
+    └ <pymysql.connections.Connection object at 0x000001DB22658C50>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000001DB224C32E0>
+    │    │                └ <pymysql.connections.Connection object at 0x000001DB22658C50>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x000001DB22658C50>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000001DB224C3BA0>
+    └ <pymysql.connections.MySQLResult object at 0x000001DB2265B690>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000001DB2265B690>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001DB224C1260>
+    └ <pymysql.protocol.MysqlPacket object at 0x000001DB225B6E00>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000001DB225B6E00>
+    │   └ <function raise_mysql_exception at 0x000001DB223B0C20>
+    └ <module 'pymysql.err' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\pymysql\\err.py'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Duplicate entry 'yzl1' for key 'users.username'"
+          │          └ 1062
+          └ <class 'pymysql.err.IntegrityError'>
+
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, "Duplicate entry 'yzl1' for key 'users.username'")
+[SQL: INSERT INTO users (user_id, usertype, username, password, `isDelete`, add_time) VALUES (%(user_id)s, %(usertype)s, %(username)s, %(password)s, %(isDelete)s, %(add_time)s)]
+[parameters: {'user_id': '2024061122543280', 'usertype': '0', 'username': 'yzl1', 'password': 'yzlsdbd', 'isDelete': 0, 'add_time': '2024-06-11 22:54:33'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-06-13 21:12:37.013 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002357E48F4C0>
+    └ <Thread(Thread-7 (process_request_thread), started daemon 33164)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002357E48F1A0>
+    └ <Thread(Thread-7 (process_request_thread), started daemon 33164)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-7 (process_request_thread), started daemon 33164)>
+    │    │        │    └ (<socket.socket fd=904, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 56363)>, ('127.0.0.1', 56363))
+    │    │        └ <Thread(Thread-7 (process_request_thread), started daemon 33164)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>>
+    └ <Thread(Thread-7 (process_request_thread), started daemon 33164)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 56363)
+    │    │              └ <socket.socket fd=904, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 56363)>
+    │    └ <function BaseServer.finish_request at 0x000002357E491260>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+    │    │                   │        └ ('127.0.0.1', 56363)
+    │    │                   └ <socket.socket fd=904, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 56363)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x00000235004D2840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000235036A2E50>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000002357FE9F9C0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000235036A2E50>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x00000235036A2E50>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002350356BCD0>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x00000235036A2E50>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x00000235041C4540>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000023503327880>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000235041C4680>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=904>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002350356BCD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000235041C4680>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=904>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000023500A0EAC0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000023500A0E200>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000023500A0E160>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.GetUserInfo'
+           │    │           │    │              └ <Rule '/api_1_0/users/me' (OPTIONS, GET, HEAD) -> users.GetUserInfo>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000023501A46160>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000023500A0E3E0>
+           └ <Flask 'app'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\urls.py", line 22, in get_user_info
+    return UsersOtherResource.get_user_info_by_token()
+           │                  └ <classmethod(<function UsersOtherResource.get_user_info_by_token at 0x00000235020FE660>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+> File "D:\project\interface-security\api_1_0\usersResource\usersOtherResource.py", line 45, in get_user_info_by_token
+    kwargs = parser.parse_args()
+             │      └ <function RequestParser.parse_args at 0x0000023501FF3740>
+             └ <flask_restful.reqparse.RequestParser object at 0x0000023504190910>
+
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x0000023504190910>
+                   │   │     └ <Request 'http://127.0.0.1:5000/api_1_0/users/me' [GET]>
+                   │   └ <function Argument.parse at 0x0000023501FF3560>
+                   └ Argument('token', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), acti...
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the query string'
+    │    └ <function Argument.handle_validation_error at 0x0000023501FF34C0>
+    └ Argument('token', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), acti...
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'token': 'token参数类型不正确或缺失'}
+    │             └ <function abort at 0x0000023501FD2700>
+    └ <module 'flask_restful' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\flask_restful\\__init__.py'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x000002350083DBC0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\helpers.py", line 274, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x00000235008F83D0>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-06-13 21:12:40.655 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002357E48F4C0>
+    └ <Thread(Thread-8 (process_request_thread), started daemon 65952)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002357E48F1A0>
+    └ <Thread(Thread-8 (process_request_thread), started daemon 65952)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-8 (process_request_thread), started daemon 65952)>
+    │    │        │    └ (<socket.socket fd=920, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 56364)>, ('127.0.0.1', 56364))
+    │    │        └ <Thread(Thread-8 (process_request_thread), started daemon 65952)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>>
+    └ <Thread(Thread-8 (process_request_thread), started daemon 65952)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 56364)
+    │    │              └ <socket.socket fd=920, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 56364)>
+    │    └ <function BaseServer.finish_request at 0x000002357E491260>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+    │    │                   │        └ ('127.0.0.1', 56364)
+    │    │                   └ <socket.socket fd=920, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 56364)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x00000235004D2840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023504191FD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000002357FE9F9C0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023504191FD0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000023504191FD0>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002350356BCD0>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023504191FD0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000023503703240>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000023503327740>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000023503702CA0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=920>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002350356BCD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000023503702CA0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=920>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000023500A0EAC0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000023500A0E200>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000023500A0E160>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.GetUserInfo'
+           │    │           │    │              └ <Rule '/api_1_0/users/me' (OPTIONS, GET, HEAD) -> users.GetUserInfo>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000023501A46160>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000023500A0E3E0>
+           └ <Flask 'app'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\urls.py", line 22, in get_user_info
+    return UsersOtherResource.get_user_info_by_token()
+           │                  └ <classmethod(<function UsersOtherResource.get_user_info_by_token at 0x00000235020FE660>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+> File "D:\project\interface-security\api_1_0\usersResource\usersOtherResource.py", line 45, in get_user_info_by_token
+    kwargs = parser.parse_args()
+             │      └ <function RequestParser.parse_args at 0x0000023501FF3740>
+             └ <flask_restful.reqparse.RequestParser object at 0x0000023504244BD0>
+
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x0000023504244BD0>
+                   │   │     └ <Request 'http://127.0.0.1:5000/api_1_0/users/me' [GET]>
+                   │   └ <function Argument.parse at 0x0000023501FF3560>
+                   └ Argument('token', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), acti...
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the query string'
+    │    └ <function Argument.handle_validation_error at 0x0000023501FF34C0>
+    └ Argument('token', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), acti...
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'token': 'token参数类型不正确或缺失'}
+    │             └ <function abort at 0x0000023501FD2700>
+    └ <module 'flask_restful' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\flask_restful\\__init__.py'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x000002350083DBC0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\helpers.py", line 274, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x00000235008F83D0>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-06-13 21:13:08.608 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002357E48F4C0>
+    └ <Thread(Thread-10 (process_request_thread), started daemon 65428)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002357E48F1A0>
+    └ <Thread(Thread-10 (process_request_thread), started daemon 65428)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-10 (process_request_thread), started daemon 65428)>
+    │    │        │    └ (<socket.socket fd=948, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 56369)>, ('127.0.0.1', 56369))
+    │    │        └ <Thread(Thread-10 (process_request_thread), started daemon 65428)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>>
+    └ <Thread(Thread-10 (process_request_thread), started daemon 65428)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 56369)
+    │    │              └ <socket.socket fd=948, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 56369)>
+    │    └ <function BaseServer.finish_request at 0x000002357E491260>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+    │    │                   │        └ ('127.0.0.1', 56369)
+    │    │                   └ <socket.socket fd=948, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 56369)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x00000235004D2840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023504191AD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000002357FE9F9C0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023504191AD0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000023504191AD0>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002350356BCD0>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023504191AD0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x00000235037D80E0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000023503327740>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000235037D8360>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=948>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002350356BCD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000235037D8360>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=948>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000023500A0EAC0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000023500A0E200>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000023500A0E160>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.GetUserInfo'
+           │    │           │    │              └ <Rule '/api_1_0/users/me' (OPTIONS, GET, HEAD) -> users.GetUserInfo>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000023501A46160>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000023500A0E3E0>
+           └ <Flask 'app'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\urls.py", line 22, in get_user_info
+    return UsersOtherResource.get_user_info_by_token()
+           │                  └ <classmethod(<function UsersOtherResource.get_user_info_by_token at 0x00000235020FE660>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+> File "D:\project\interface-security\api_1_0\usersResource\usersOtherResource.py", line 45, in get_user_info_by_token
+    kwargs = parser.parse_args()
+             │      └ <function RequestParser.parse_args at 0x0000023501FF3740>
+             └ <flask_restful.reqparse.RequestParser object at 0x0000023504239A10>
+
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x0000023504239A10>
+                   │   │     └ <Request 'http://127.0.0.1:5000/api_1_0/users/me' [GET]>
+                   │   └ <function Argument.parse at 0x0000023501FF3560>
+                   └ Argument('token', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), acti...
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the query string'
+    │    └ <function Argument.handle_validation_error at 0x0000023501FF34C0>
+    └ Argument('token', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), acti...
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'token': 'token参数类型不正确或缺失'}
+    │             └ <function abort at 0x0000023501FD2700>
+    └ <module 'flask_restful' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\flask_restful\\__init__.py'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x000002350083DBC0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\helpers.py", line 274, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x00000235008F83D0>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-06-13 21:13:20.476 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002357E48F4C0>
+    └ <Thread(Thread-11 (process_request_thread), started daemon 55320)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002357E48F1A0>
+    └ <Thread(Thread-11 (process_request_thread), started daemon 55320)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-11 (process_request_thread), started daemon 55320)>
+    │    │        │    └ (<socket.socket fd=868, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 56371)>, ('127.0.0.1', 56371))
+    │    │        └ <Thread(Thread-11 (process_request_thread), started daemon 55320)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>>
+    └ <Thread(Thread-11 (process_request_thread), started daemon 55320)>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 56371)
+    │    │              └ <socket.socket fd=868, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 56371)>
+    │    └ <function BaseServer.finish_request at 0x000002357E491260>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+    │    │                   │        └ ('127.0.0.1', 56371)
+    │    │                   └ <socket.socket fd=868, family=2, type=1, proto=0, laddr=('127.0.0.1', 5000), raddr=('127.0.0.1', 56371)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x00000235004D2840>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023504244790>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000002357FE9F9C0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023504244790>
+  File "C:\Users\One77\.conda\envs\playwright\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000023504244790>>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002350356BCD0>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000023501E1A1D0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023504244790>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000023503703240>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000023503327740>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000235037D80E0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=868>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002350356BCD0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000235037D80E0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=868>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000023500A0EAC0>
+           └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000023500A0E200>
+               └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000023500A0E160>
+         └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.GetUserInfo'
+           │    │           │    │              └ <Rule '/api_1_0/users/me' (OPTIONS, GET, HEAD) -> users.GetUserInfo>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000023501A46160>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000023500A0E3E0>
+           └ <Flask 'app'>
+
+  File "D:\project\interface-security\api_1_0\usersResource\urls.py", line 22, in get_user_info
+    return UsersOtherResource.get_user_info_by_token()
+           │                  └ <classmethod(<function UsersOtherResource.get_user_info_by_token at 0x00000235020FE660>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+> File "D:\project\interface-security\api_1_0\usersResource\usersOtherResource.py", line 45, in get_user_info_by_token
+    kwargs = parser.parse_args()
+             │      └ <function RequestParser.parse_args at 0x0000023501FF3740>
+             └ <flask_restful.reqparse.RequestParser object at 0x0000023504244D50>
+
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x0000023504244D50>
+                   │   │     └ <Request 'http://127.0.0.1:5000/api_1_0/users/me' [GET]>
+                   │   └ <function Argument.parse at 0x0000023501FF3560>
+                   └ Argument('token', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), acti...
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the query string'
+    │    └ <function Argument.handle_validation_error at 0x0000023501FF34C0>
+    └ Argument('token', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), acti...
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'token': 'token参数类型不正确或缺失'}
+    │             └ <function abort at 0x0000023501FD2700>
+    └ <module 'flask_restful' from 'C:\\Users\\One77\\AppData\\Roaming\\Python\\Python311\\site-packages\\flask_restful\\__init__.py'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x000002350083DBC0>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\flask\helpers.py", line 274, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+  File "C:\Users\One77\AppData\Roaming\Python\Python311\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x00000235008F83D0>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.

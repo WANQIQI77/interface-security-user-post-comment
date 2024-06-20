@@ -1,0 +1,22 @@
+- name: comments修改接口
+  request:
+    method: put
+    url: /api_1_0/comments
+    headers:
+      content-type: application/json
+    data:
+      autoID: 
+      content_id: 
+      content: 
+      publish_date: 
+      post_id: 
+      user_id: 
+      isDelete: 
+      add_time: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+
+    

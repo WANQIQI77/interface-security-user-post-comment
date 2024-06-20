@@ -1,0 +1,19 @@
+-
+  module_name: postsService
+  class_name: postsService
+  function_name: xxx
+  params:
+      autoID: 
+      post_id: 
+      title: 
+      content: 
+      publish_date: 
+      user_id: 
+      isDelete: 
+      add_time: 
+
+  validate:
+    - eq:
+        - code
+        - "2000"
+    
